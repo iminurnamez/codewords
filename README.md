@@ -9,6 +9,8 @@ Should adjust to your screen size and is windowed by default.
 
 Controls
 
+Drag / Drop to manipulate code
+
 F to toggle fullscreen
 
 ESC to exit
