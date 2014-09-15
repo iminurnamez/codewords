@@ -55,9 +55,20 @@ class Button(object):
        
         
     def draw(self, surface):
-       pg.draw.rect(surface, pg.Color("gold3"), self.rect)
-       pg.draw.rect(surface, pg.Color("steelblue4"), self.rect, 2)
-       self.label.draw(surface)
+        pg.draw.rect(surface, pg.Color("gold3"), self.rect)
+       
+        border = self.rect.inflate(16, 18)
+        border.top = self.rect.top - 6
+        pg.draw.rect(surface, pg.Color("gold3"), border)
+        pg.draw.rect(surface, pg.Color("steelblue4"), self.rect, 3)
+        pg.draw.rect(surface, pg.Color("steelblue4"), border, 4)
+        points = [(self.rect.topleft, border.topleft),
+                      (self.rect.topright, border.topright),
+                      (self.rect.bottomleft, border.bottomleft),
+                      (self.rect.bottomright, border.bottomright)]
+        for pair in points:
+            pg.draw.line(surface, pg.Color("steelblue4"), pair[0], pair[1], 2)        
+        self.label.draw(surface)
        
        
 class PayloadButton(Button):

@@ -1,7 +1,7 @@
 import os
 from math import atan2
-from collections import OrderedDict
 import pygame as pg
+
 
 
 
@@ -12,13 +12,14 @@ class Control(object):
         self.caption = caption
         self.done = False
         self.clock = pg.time.Clock()
-        self.show_fps = True
+        self.show_fps = False
         self.keys = pg.key.get_pressed()
         self.state_dict = {}
         self.state_name = None
         self.state = None
         self.fullscreen = False
         self.dt = 0.0
+        self.fps = 60
 
     def setup_states(self, state_dict, start_state):
         self.state_dict = state_dict
@@ -42,11 +43,9 @@ class Control(object):
 
     def event_loop(self):
         for event in pg.event.get():
-            
             if event.type == pg.KEYDOWN:
                 self.keys = pg.key.get_pressed()
                 self.toggle_show_fps(event.key)
-                self.toggle_fullscreen(event.key)
             elif event.type == pg.KEYUP:
                 self.keys = pg.key.get_pressed()
             self.state.get_event(event)
@@ -56,15 +55,6 @@ class Control(object):
             self.show_fps = not self.show_fps
             if not self.show_fps:
                 pg.display.set_caption(self.caption)
-    
-    def toggle_fullscreen(self, key):
-        if key == pg.K_f:
-            self.fullscreen = not self.fullscreen
-            if self.fullscreen:
-                pg.display.set_mode(self.screen_size, pg.FULLSCREEN)
-            else:
-                pg.display.set_mode(self.screen_size)
-    
     
     def main(self):
         while not self.done:
@@ -86,6 +76,8 @@ class _State(object):
         self.next = None
         self.previous = None
         self.persist = {}
+        self.persist["sounds"] = True
+        self.persist["fullscreen"] = False
 
     def get_event(self, event):
         pass
@@ -134,7 +126,12 @@ def load_all_sfx(directory, accept=(".wav", ".mp3", ".ogg", ".mdi")):
 def load_all_fonts(directory, accept=(".ttf")):
     return load_all_music(directory, accept)
     
+#def get_angle(origin, destination):
+#    x_dist = destination[0] - origin[0]
+#    y_dist = destination[1] - origin[1] 
+#    return atan2(-y_dist, x_dist)
+
 def get_angle(origin, destination):
-    x_dist = destination[0] - origin[0]
+    x_dist = destination[0] -  origin[0]
     y_dist = destination[1] - origin[1] 
-    return atan2(-y_dist, -x_dist)
+    return atan2(-y_dist, x_dist)

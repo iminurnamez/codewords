@@ -1,0 +1,107 @@
+
+Licenses:
+
+CC-0             http://creativecommons.org/publicdomain/zero/1.0/
+CC-BY-NC-3   http://creativecommons.org/licenses/by-nc/3.0/
+CC-BY-3        http://creativecommons.org/licenses/by/3.0/
+Sampling+    http://creativecommons.org/licenses/sampling+/1.0/
+
+
+
+
+
+Audio File: bell2.ogg
+Source Title: zenbell_1.mp3
+Source URL: https://www.freesound.org/people/kerri/sounds/27421/
+Source Author: https://www.freesound.org/people/kerri/
+License: CC-BY-3
+
+Audio File: bell1.ogg
+Source Title: Bowl 16 bit 44100 mono.wav
+Source URL: https://www.freesound.org/people/Duendevision/sounds/88744/
+Source Author: https://www.freesound.org/people/Duendevision/
+License: Sampling +
+
+
+Audio File: bell3.ogg
+Source Title: singing bell hit 1.wav
+Source URL: https://www.freesound.org/people/ryancacophony/sounds/202018/
+Source Author: https://www.freesound.org/people/ryancacophony/
+License:
+
+
+Audio File: bell4.ogg
+Source Title: 
+Source URL: https://www.freesound.org/people/the_very_Real_Horst/sounds/240932/
+Source Author: https://www.freesound.org/people/the_very_Real_Horst/
+License: CC-BY-NC-3
+
+
+Audio File: hum.ogg
+Source Title: massive recording ghent » 012_meditate_turning.wav
+Source URL: https://www.freesound.org/people/freesound/sounds/50168/
+Source Author: https://www.freesound.org/people/freesound/
+License: CC-0
+
+
+Audio File: energy.ogg
+Source Title: Solfeggio Energy Bar Chimes » Energy Bar Chimes Solfeggio 741 Hz solo-04 Experimental Composition
+Source URL: https://www.freesound.org/people/the_very_Real_Horst/sounds/240935/
+Source Author: https://www.freesound.org/people/the_very_Real_Horst/
+License: CC-BY-NC-3
+
+
+Audio File: gong.ogg
+Source Title: Chinese Gong » Tao-Chi-Gong.mp3
+Source URL: https://www.freesound.org/people/the_very_Real_Horst/sounds/193040/
+Source Author: https://www.freesound.org/people/the_very_Real_Horst/
+License: CC-BY-NC-3
+
+
+Audio File: hiss.ogg
+Source Title: Padaddict I » Hissing Snakes.wav
+Source URL: https://www.freesound.org/people/AaronGNP/sounds/44022/
+Source Author: https://www.freesound.org/people/AaronGNP/
+License: Sampling+
+
+
+Audio File: typing.ogg
+Source Title: keyboard_typing.wav
+Source URL: https://www.freesound.org/people/j1987/sounds/79388/
+Source Author: https://www.freesound.org/people/j1987/
+License: CC-0
+
+
+Audio File:
+Source Title:
+Source URL:
+Source Author:
+License:
+
+
+Audio File:
+Source Title:
+Source URL:
+Source Author:
+License:
+
+
+Audio File:
+Source Title:
+Source URL:
+Source Author:
+License:
+
+
+Audio File:
+Source Title:
+Source URL:
+Source Author:
+License:
+
+
+Audio File:
+Source Title:
+Source URL:
+Source Author:
+License:
