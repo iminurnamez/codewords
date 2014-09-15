@@ -16,7 +16,6 @@ class Dimmer(object):
             self.alpha -= self.increment
             self.increment += .001
             if self.alpha <= 0:
-                print self.increment
                 self.alpha = 0
                 self.fading_in = False
         else:

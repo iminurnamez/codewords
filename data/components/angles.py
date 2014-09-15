@@ -67,8 +67,3 @@ def get_collision_side(rect, other_rect):
         if colls[side]:
             return side
     return "corner"
-    
-
-if __name__ == "__main__":
-    print degrees(get_angle((0,0), (1, -1)))
-    print project((100, 100), .75*pi, 50)

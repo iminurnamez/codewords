@@ -347,9 +347,7 @@ class VerdantSplash(tools._State):
         self.draw(surface)
         
     def get_event(self, event):
-        if event.type == pg.MOUSEBUTTONDOWN:
-            print(event.pos)
-        elif event.type == pg.KEYDOWN:
+        if event.type == pg.KEYDOWN:
             if event.key == pg.K_ESCAPE:
                 self.done = True
 
