@@ -16,10 +16,10 @@ class HelpScreen(tools._State):
         font = prepare.FONTS["Fixedsys500c"]        
         font_size = prepare.SETTINGS[prepare.SCREEN_SIZE]["font size"]
         lg_font_size = prepare.SETTINGS[prepare.SCREEN_SIZE]["lg font size"] // 2
-        help_lines = ["Drag / Drop Code To Assemble Snippets",
+        help_lines = ["Drag And Join Code To Assemble Snippets",
                             "Process Snippets In The Evalutron",
                             "Score Points By Creating Score Words",
-                            "Get Bonus Points For Palindromes and Long Lists /Strings",
+                            "Get Bonus Points For Palindromes and Long Lists/Strings",
                             "Drag Code To Trashcan To Throw Away (-1 Point)",
                             "Click Trashcan To Dump All Untouched Code (-10 Points)"
                             ]                            
