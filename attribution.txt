@@ -1,3 +1,6 @@
+﻿
+The Pygame library used in this game is licensed under the Gnu Lesser General Public License Version 2.1  http://www.pygame.org/LGPL
+
 
 Licenses:
 
