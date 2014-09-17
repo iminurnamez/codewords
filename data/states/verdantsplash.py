@@ -155,19 +155,18 @@ class Balloon(object):
         self.stop = stop
         self.started = False
         self.stopped = False
-        self.increment = 4
+        self.increment = 4.0
         
     def update(self, ticks):
         
         if self.rect.width < 1600 and self.pos[1] < self.stop: 
+            self.increment += .01     
             if self.rect.width > 900:
-                self.increment = 8
-            if self.rect.width > 1000:
-                self.incrtement = 10
+                self.increment += .02
             if self.rect.width > 1200:
-                self.increment = 12           
+                self.increment += .04
             w, h = self.image.get_size()
-            new_size = (int(w + self.increment), int(h + self.increment))
+            new_size = (int(w + int(self.increment)), int(h + int(self.increment)))
             self.image = pg.transform.scale(self.base_image, new_size)
             self.rect = self.image.get_rect(center=self.pos)
         

@@ -1,5 +1,6 @@
 from . import tools, prepare
-from .states import game, helpscreen, optionsmenu, verdantsplash, pysplash
+from .states import (game, helpscreen, optionsmenu, verdantsplash,
+                                pysplash, exitscreen)
 
 
 def main():
@@ -8,6 +9,8 @@ def main():
                         "PYSPLASH": pysplash.PySplash(),
                         "HELP": helpscreen.HelpScreen(),
                         "OPTIONS": optionsmenu.OptionsMenu(),
-                        "GAME": game.Game()}       
+                        "GAME": game.Game(),
+                        "EXITSCREEN": exitscreen.ExitScreen()}
+                        
     run_it.setup_states(state_dict, "PYSPLASH")
     run_it.main()

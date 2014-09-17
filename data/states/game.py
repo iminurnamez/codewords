@@ -103,11 +103,11 @@ class Game(tools._State):
         
     def get_event(self, event):
         if event.type == pg.QUIT:
-            self.quit = True
+            self.next = "EXITSCREEN"
             self.done =True
         elif event.type == pg.KEYDOWN:
             if event.key == pg.K_ESCAPE:
-                self.quit = True
+                self.next = "EXITSCREEN"
                 self.done = True
         elif event.type == pg.MOUSEBUTTONDOWN:
             if self.current_tile is None:

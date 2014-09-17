@@ -33,7 +33,7 @@ class HelpScreen(tools._State):
         for line in help_lines:
             label = GroupLabel(self.labels, font, font_size, line, "steelblue4",
                                         {"midtop": (center, top)})
-            top += label.rect.height + spacer
+            top += label.rect.height + (spacer // 2)
         top += spacer
         control_title = GroupLabel(self.labels, font, lg_font_size, "help(Controls)",
                                                "steelblue4", {"midtop": (center, top)})
