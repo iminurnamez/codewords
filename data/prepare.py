@@ -82,7 +82,7 @@ FONTS = tools.load_all_fonts(os.path.join("resources", "fonts"))
 MUSIC = tools.load_all_music(os.path.join("resources", "music"))
 SFX   = tools.load_all_sfx(os.path.join("resources", "sound"))
 GFX   = tools.load_all_gfx(os.path.join("resources", "graphics"))
-for img in GFX.keys():
+for img in list(GFX.keys()):
     GFX[img + "small"] = pg.transform.scale(GFX[img], (int(GFX[img].get_width() // 2), 
                                                                         int(GFX[img].get_height() // 2)))
     
