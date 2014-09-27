@@ -13,4 +13,9 @@ Drag/Drop to manipulate code
 
 ESC to exit
 
+Running the game:
+
+*python codewords.py* from the CLI
+or double-click on codewords.py's file icon
+
 
