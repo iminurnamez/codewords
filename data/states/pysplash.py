@@ -26,7 +26,7 @@ class Goal(object):
         
 class Ball(object):
     def __init__(self, center_point):
-        self.angle = pi * .325
+        self.angle = pi * .3
         self.speed = 10.0
         self.max_speed = 15.0
         self.min_speed = 10.0  
@@ -107,11 +107,11 @@ class Paddle(object):
             
             
         else:
-            if keys[pg.K_LEFT]:
+            if keys[pg.K_LEFT] or keys[pg.K_a]:
                 self.velocity = -1
                 self.english = max(-5, self.english - .1)
                 
-            elif keys[pg.K_RIGHT]:
+            elif keys[pg.K_RIGHT] or keys[pg.K_d]:
                 self.velocity = 1
                 self.english = min(self.english + .1, 5)
                    
@@ -184,10 +184,10 @@ class PySplash(tools._State):
         
     def get_event(self, event):
         if event.type == pg.KEYDOWN:
-            if event.key == pg.K_LEFT:
+            if event.key in (pg.K_LEFT, pg.K_a):
                 self.paddles[1].velocity = -1
                 self.paddles[1].controlled = True
-            elif event.key == pg.K_RIGHT:
+            elif event.key in (pg.K_RIGHT, pg.K_d):
                 self.paddles[1].velocity = 1
                 self.paddles[1].controlled = True
             elif event.key == pg.K_ESCAPE:

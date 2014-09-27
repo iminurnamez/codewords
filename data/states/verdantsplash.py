@@ -94,7 +94,7 @@ class Cloud(object):
         self.image = prepare.GFX["cloudsnake"]
 
         self.rect = self.image.get_rect(topleft=topleft)
-        self.speed = 5.5
+        self.speed =6.5
         self.raindrops = []
         self.rain_offsets = [(90, 279), (256, 284), (171, 205),
                                      (312, 215), (92, 164), (264, 145),
@@ -165,6 +165,8 @@ class Balloon(object):
                 self.increment += .02
             if self.rect.width > 1200:
                 self.increment += .04
+            if self.rect.width > 1500:
+                self.increment += .08
             w, h = self.image.get_size()
             new_size = (int(w + int(self.increment)), int(h + int(self.increment)))
             self.image = pg.transform.scale(self.base_image, new_size)
@@ -313,7 +315,7 @@ class VerdantSplash(tools._State):
         self.vines = Vines((self.rect.centerx, self.ground_rect.top + 80))
         self.truck = Truck((self.rect.right + 5, self.rect.bottom - 250),
                                     self.rect.centerx - 450)
-        self.balloon = Balloon((self.rect.centerx, self.rect.top - 150),
+        self.balloon = Balloon((self.rect.centerx, self.rect.top - 100),
                                         self.rect.top + 350)         
         self.glass = Glass()
         self.ticks = 0
@@ -321,10 +323,10 @@ class VerdantSplash(tools._State):
                             400: self.sun,
                             440: self.snow,
                             900: self.cloud,
-                            1230: self.grass,
-                            1270: self.vines,
-                            1650: self.truck,
-                            1850: self.balloon}
+                            1250: self.grass,
+                            1280: self.vines,
+                            1530: self.truck,
+                            1650: self.balloon}
         self.props = [self.sky, self.sun, self.snow, self.grass, self.cloud, self.vines,
                            self.truck, self.balloon, self.glass]
         

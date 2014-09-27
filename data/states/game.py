@@ -89,6 +89,7 @@ class Game(tools._State):
 
         
     def dump_tiles(self):
+        """Get rid of all untouched tiles and replace with new tiles"""
         to_remove = set()
         for tile in self.tiles:
             if not tile.handled:

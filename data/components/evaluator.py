@@ -4,7 +4,7 @@ from itertools import cycle
 from collections import OrderedDict
 import pygame as pg
 from .. import prepare
-from ..tools import get_angle
+from ..components.angles import get_angle
 from ..components.tiles import ListTile, StringTile
 from ..components.labels import Label
 from ..components.words import CODE_WORDS
