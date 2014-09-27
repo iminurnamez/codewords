@@ -144,9 +144,7 @@ class ListTile(Tile):
                 self.text = "{}{}".format(self.text, other.text)
                 self.args.append(other.value)
                 used = True                
-        
-      
-            
+
         if used:
             other.used = True
             other.slot.tile = None
@@ -176,7 +174,6 @@ class StringTile(Tile):
         super(StringTile, self).__init__(value, "string", center_point, slot, color)
         self.linkables = {"slice", "index"}
         self.valid_methods = {"join", "replace", "split", "adder", "incrementer"}
-        
 
     def collide(self, other):
         used = False
@@ -235,10 +232,13 @@ class StringTile(Tile):
     
     def evaluate(self):
         result = None
-        if self.method:
-            result = self.method(*self.args)        
-        elif self.link in ("slice", "index"):
-            result = my_slice(self.args)
+        try:
+            if self.method:
+                result = self.method(*self.args)        
+            elif self.link in ("slice", "index"):
+                result = my_slice(self.args)    
+        except:
+            pass
         return result
 
             
@@ -337,8 +337,12 @@ class JoinTile(MethodTile):
         self.valid_args = {"list"}
          
     def evaluate(self):
-        return self.function(*self.args)
-       
+        try:
+            return self.function(*self.args)
+        except:
+            return
+            
+            
 class ReplaceTile(MethodTile):
     def __init__(self, center_point, slot, color="white"):
         super(ReplaceTile, self).__init__(".replace()", "replace", center_point, slot, color)
@@ -379,8 +383,10 @@ class FunctionTile(Tile):
             return True
     
     def evaluate(self):
-        return self.function(self.args)
-        
+        try:
+            return self.function(self.args)
+        except:
+            return
         
 class MaxTile(FunctionTile):
     def __init__(self, center_point, slot, color="white"):
@@ -442,7 +448,6 @@ class ShuffleTile(FunctionTile):
         self.valid_args = {"list"}
         self.function = my_shuffle
 
-        
   
 class ChoiceTile(FunctionTile):
     def __init__(self, center_point, slot, color="white"):
@@ -450,5 +455,4 @@ class ChoiceTile(FunctionTile):
         self.valid_args = {"list", "string"}
         self.function = my_choice      
         
- 
- 
+  

@@ -38,7 +38,7 @@ class ExitScreen(tools._State):
         top = screen.bottom - (spacer * 2)
     
     def get_event(self, event):
-        if event.type in (pg.KEYDOWN, pg.MOUSEBUTTONDOWN):
+        if event.type in (pg.KEYDOWN, pg.MOUSEBUTTONDOWN, pg.QUIT):
             self.done = True
             self.quit = True
         

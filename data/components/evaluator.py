@@ -26,7 +26,7 @@ class Evaluator(object):
                                        "Such Elements": 10}
 
         self.hum = prepare.SFX["hum"]
-        self.bells = [pg.mixer.Sound(prepare.SFX["bell" + str(x)]) for x in range(1, 4)]
+        self.bells = [pg.mixer.Sound(prepare.SFX["bell{}".format(x)]) for x in range(1, 4)]
         
         
         self.resize(leftbottom)
@@ -34,14 +34,14 @@ class Evaluator(object):
     
     def resize(self, leftbottom):
         size = "small" if prepare.SCREEN_SIZE in ((800, 600), (640, 480)) else ""    
-        self.machine = prepare.GFX["machine" + size]
+        self.machine = prepare.GFX["machine{}".format(size)]
         self.rect = self.machine.get_rect(bottomleft=leftbottom)
         self.wheels = cycle([prepare.GFX[x + size] for x in ("wheel1", "wheel2")])
         self.wheel = next(self.wheels)
         wheel_offset = prepare.SETTINGS[prepare.SCREEN_SIZE]["wheel offset"]
         self.wheel_rect = self.wheel.get_rect(topleft=(self.rect.left + wheel_offset[0],
                                                                             self.rect.top + wheel_offset[1]))
-        self.snakes = cycle([prepare.GFX["snake" + x + size] for x in ("1", "3", "2", "3")])
+        self.snakes = cycle([prepare.GFX["snake{}{}".format(x, size)] for x in ("1", "3", "2", "3")])
         self.snake = next(self.snakes)
         self.snake_rect = self.snake.get_rect(midbottom=(self.wheel_rect.centerx, 
                                                                                   self.wheel_rect.bottom - 1))
@@ -50,15 +50,15 @@ class Evaluator(object):
                                                                         self.wheel_rect.top))
         self.roller = prepare.GFX["roller" + size]
         self.roller_rect = self.roller.get_rect(bottomleft=self.rect.bottomright)
-        self.roller_wheels = cycle([prepare.GFX["rollerwheels1" + size],
-                                               prepare.GFX["rollerwheels2" + size]])
+        self.roller_wheels = cycle([prepare.GFX["rollerwheels1{}".format(size)],
+                                               prepare.GFX["rollerwheels2{}".format(size)]])
         self.roller_wheel = next(self.roller_wheels) 
         self.roller_wheel_rect = self.roller_wheel.get_rect(topleft=(self.roller_rect.left,
                                                                                               self.roller_rect.top + 1))
         self.supports = prepare.GFX["supports" + size]
         self.support_rect = self.supports.get_rect(bottomleft=self.rect.bottomright)
         self.cover = pg.Rect(0, self.rect.top, self.rect.left, self.rect.height)
-        self.consoles = cycle([prepare.GFX["console" + str(x) + size] for x in range(1, 7)])
+        self.consoles = cycle([prepare.GFX["console{}{}".format(x, size)] for x in range(1, 7)])
         self.console = next(self.consoles)
         
         console_offset = prepare.SETTINGS[prepare.SCREEN_SIZE]["console offset"]
