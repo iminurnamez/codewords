@@ -122,7 +122,8 @@ class Game(tools._State):
                     return
                 elif self.trash_rect.collidepoint(event.pos):
                     self.dump_tiles()
-                      
+                elif self.evaluator.rect.collidepoint(event.pos):
+                    self.evaluator.hurry()                
                 for tile in self.tiles:
                     if tile.rect.collidepoint(event.pos):
                         self.current_tile = tile

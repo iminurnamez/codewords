@@ -65,6 +65,11 @@ class Evaluator(object):
         self.console_rect = self.console.get_rect(topleft=(self.rect.left + console_offset[0],
                                                                                 self.rect.top + console_offset[1]))
 
+    def hurry(self):
+            if self.state in ("Waiting", "Running", "Spitting"):
+                self.result_tile.move((self.roller_rect.right - self.result_tile.rect.right, 0))
+                self.state = "Spitting"                 
+    
     def reset(self):
         self.angle = None
         self.result_tile = None
@@ -108,8 +113,8 @@ class Evaluator(object):
         if self.state == "Running":
             self.run_ticks -= 1
             if not self.run_ticks:
-                self.state = "Spitting"
-            
+                self.state = "Spitting"       
+        
         elif self.state == "Spitting":
             self.result_tile.move((self.send_speed, 0))
             rect = self.result_tile.rect

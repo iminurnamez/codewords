@@ -212,7 +212,7 @@ class Star(object):
         
 
 class Sky(object):
-    def __init__(self, (r, g, b), (width, height)):
+    def __init__(self, r, g, b, width, height):
         self.started = False
         self.stopped = False
         self.r = r
@@ -309,7 +309,7 @@ class VerdantSplash(tools._State):
         self.mountains_rect = self.mountains.get_rect(bottomleft=(0, self.ground_rect.top))
         for left in mountains:
             self.mountains.blit(mountain, (left, 0))
-        self.sky = Sky((0, 0, 20), (self.rect.width, self.ground_rect.top - 20))
+        self.sky = Sky(0, 0, 20, self.rect.width, self.ground_rect.top - 20)
         self.snow = Snow(self.ground_rect)
         self.cloud = Cloud((self.rect.right + 5, self.rect.top + 50))
         self.vines = Vines((self.rect.centerx, self.ground_rect.top + 80))
@@ -354,7 +354,6 @@ class VerdantSplash(tools._State):
 
     def draw(self, surface):
         self.sky.draw(self.surf)
-        
         self.sun.draw(self.surf)
         self.surf.blit(self.mountains, self.mountains_rect)
         pg.draw.rect(self.surf, (109, 182, 55), self.ground_rect)
