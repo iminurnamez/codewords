@@ -66,7 +66,7 @@ class Evaluator(object):
                                                                                 self.rect.top + console_offset[1]))
 
     def hurry(self):
-            if self.state in ("Waiting", "Running", "Spitting"):
+            if self.state in ("Running", "Spitting"):
                 self.result_tile.move((self.roller_rect.right - self.result_tile.rect.right, 0))
                 self.state = "Spitting"                 
     
