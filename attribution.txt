@@ -34,7 +34,7 @@ License:
 
 
 Audio File: bell4.ogg
-Source Title: 
+Source Title: NEPTUN-Solo-03 stretched sound.wav
 Source URL: https://www.freesound.org/people/the_very_Real_Horst/sounds/240932/
 Source Author: https://www.freesound.org/people/the_very_Real_Horst/
 License: CC-BY-NC-3
@@ -48,7 +48,7 @@ License: CC-0
 
 
 Audio File: energy.ogg
-Source Title: Solfeggio Energy Bar Chimes » Energy Bar Chimes Solfeggio 741 Hz solo-04 Experimental Composition
+Source Title: Energy Bar Chimes Solfeggio 741 Hz solo-04 Experimental Composition.wav
 Source URL: https://www.freesound.org/people/the_very_Real_Horst/sounds/240935/
 Source Author: https://www.freesound.org/people/the_very_Real_Horst/
 License: CC-BY-NC-3

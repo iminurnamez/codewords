@@ -132,8 +132,20 @@ class Game(tools._State):
                         pg.mouse.set_pos(tile.rect.center)
                         break
         elif event.type == pg.MOUSEBUTTONUP:
-            self.current_tile = None
-            self.cursor_visible = True
+            if self.current_tile is not None:
+                current = self.current_tile
+                current.pos = pg.mouse.get_pos()
+                current.rect.center = current.pos
+                for tile in {t for t in self.tiles.difference({current})
+                                 if not t.rect.colliderect(self.slot_board.rect)}:
+                    if tile.rect.colliderect(current.rect):
+                        if tile.collide(current):
+                            self.cursor_visible = True
+                            self.current_tile = None
+                            break
+                else:
+                    self.current_tile = None
+                    self.cursor_visible = True
         
     def update(self, surface, keys, dt):
         self.ticks += 1
@@ -151,20 +163,21 @@ class Game(tools._State):
                 if self.evaluator.state == "Waiting": 
                     if self.evaluator.evaluate(current, self.persist["sounds"]):
                         self.current_tile = None
+                        self.cursor_visible = True
             elif self.trash_rect.colliderect(current.rect):
                 self.score = max(0, self.score - 1)
                 current.slot.tile = None
                 current.used = True
                 self.current_tile = None
                 self.cursor_visble = True      
-            else:
-                for tile in {t for t in self.tiles.difference({current})
-                                 if not t.rect.colliderect(self.slot_board.rect)}:
-                    if tile.rect.colliderect(current.rect):
-                        if tile.collide(current):
-                            self.cursor_visible = True
-                            self.current_tile = None
-                            break
+            #else:
+            #    for tile in {t for t in self.tiles.difference({current})
+            #                     if not t.rect.colliderect(self.slot_board.rect)}:
+            #        if tile.rect.colliderect(current.rect):
+            #            if tile.collide(current):
+            #                self.cursor_visible = True
+            #                self.current_tile = None
+            #                break
         
         self.tiles = {x for x in self.tiles if not x.used}
         self.evaluator.update(self)

@@ -7,9 +7,9 @@ from .tiles import (ListTile, StringTile, IndexTile, MaxTile, IncrementerTile,
 from . import words
 
 class TileGenerator(object):
-    choices = ["list", "string", "method", "method", "function", "index", "slice"]
+    choices = ["list", "string", "method", "function", "index", "slice"]
     letters = ascii_uppercase
-    methods = [IncrementerTile, AdderTile, AppendTile, ExtendTile, JoinTile, SplitTile, ReplaceTile]
+    methods = [IncrementerTile, AdderTile, AppendTile, ExtendTile, JoinTile, SplitTile, ReplaceTile, JoinTile]
     functions = [MaxTile, MinTile, SortedTile, ReverseSortedTile, ReversedTile, ListFuncTile, ShuffleTile, ChoiceTile]
     indices = [0,0,0,0,1,1,1,2,2,3,4,-1,-1,-1,-2,-2,-3]
     slices = ["[::-1]", "[::-1]", "[1:]", "[1:]", "[2:]", "[3:]", "[-3]", "[:-2]", "[:-1]",

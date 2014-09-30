@@ -26,7 +26,7 @@ class Evaluator(object):
                                        "Such Elements": 10}
 
         self.hum = prepare.SFX["hum"]
-        self.bells = [pg.mixer.Sound(prepare.SFX["bell{}".format(x)]) for x in range(1, 4)]
+        self.bells = [prepare.SFX["bell{}".format(x)] for x in (1, 2, 3)]
         
         
         self.resize(leftbottom)
