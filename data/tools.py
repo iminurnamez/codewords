@@ -123,9 +123,3 @@ def load_all_sfx(directory, accept=(".wav", ".mp3", ".ogg", ".mdi")):
 
 def load_all_fonts(directory, accept=(".ttf")):
     return load_all_music(directory, accept)
-    
-
-def get_angle(origin, destination):
-    x_dist = destination[0] -  origin[0]
-    y_dist = destination[1] - origin[1] 
-    return atan2(-y_dist, x_dist)

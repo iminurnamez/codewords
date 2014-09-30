@@ -53,15 +53,16 @@ SETTINGS = OrderedDict([((1920, 1080), {"slot width": 350,
 for size in SETTINGS:
     SETTINGS[size]["wheel offset"] = (86, 136)
     SETTINGS[size]["console offset"] = (17, 107)
+    
 for size in ((800, 600), (640, 480)):
     SETTINGS[size]["wheel offset"]  =  (int(SETTINGS[(1920, 1080)]["wheel offset"][0] // 2),
                                                          int(SETTINGS[(1920, 1080)]["wheel offset"][1] // 2) + 1)
     SETTINGS[size]["console offset"] = (int(SETTINGS[(1920, 1080)]["console offset"][0] // 2),
                                                          int(SETTINGS[(1920, 1080)]["console offset"][1] // 2))
+
 pg.init()
 info = pg.display.Info()
 SCREEN_SIZE = (info.current_w, info.current_h)
-#SCREEN_SIZE = (800, 600)
 
 if SCREEN_SIZE not in SETTINGS:
     for size in SETTINGS:
@@ -82,7 +83,10 @@ FONTS = tools.load_all_fonts(os.path.join("resources", "fonts"))
 MUSIC = tools.load_all_music(os.path.join("resources", "music"))
 SFX   = tools.load_all_sfx(os.path.join("resources", "sound"))
 GFX   = tools.load_all_gfx(os.path.join("resources", "graphics"))
-for img in list(GFX.keys()):
-    GFX[img + "small"] = pg.transform.scale(GFX[img], (int(GFX[img].get_width() // 2), 
-                                                                        int(GFX[img].get_height() // 2)))
-    
+
+with_small = {}
+for img in GFX:
+    with_small[img] = GFX[img]
+    with_small[img + "small"] = pg.transform.scale(GFX[img], (int(GFX[img].get_width() // 2), 
+                                                                                            int(GFX[img].get_height() // 2)))
+GFX = with_small
