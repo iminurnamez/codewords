@@ -84,9 +84,7 @@ MUSIC = tools.load_all_music(os.path.join("resources", "music"))
 SFX   = tools.load_all_sfx(os.path.join("resources", "sound"))
 GFX   = tools.load_all_gfx(os.path.join("resources", "graphics"))
 
-with_small = {}
-for img in GFX:
-    with_small[img] = GFX[img]
-    with_small[img + "small"] = pg.transform.scale(GFX[img], (int(GFX[img].get_width() // 2), 
-                                                                                            int(GFX[img].get_height() // 2)))
-GFX = with_small
+with_small = {k + "small": pg.transform.scale(v, (v.get_width() // 2, v.get_height() // 2))
+                      for k, v in GFX.items()}
+
+GFX.update(with_small)
